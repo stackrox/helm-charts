@@ -1,0 +1,29 @@
+cluster:
+  name:
+  type: KUBERNETES_CLUSTER
+
+endpoint:
+  central: central.stackrox:443
+  advertised: sensor.stackrox:443
+
+image:
+  repository:
+    main: stackrox/main
+    collector: stackrox/collector
+  registry: stackrox.io
+
+config:
+  collectionMethod: EBPF
+  admissionControl:
+    createService: false
+    listenOnUpdates: false
+    enableService: false
+    enforceOnUpdates: false
+    scanInline: false
+    disableBypass: false
+    timeout: 3
+  registryOverride:
+  disableTaintTolerations: false
+  createUpgraderServiceAccount: false
+
+
