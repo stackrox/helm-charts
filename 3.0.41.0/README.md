@@ -3,6 +3,12 @@
 After you [install StackRox Central](https://help.stackrox.com/docs/get-started/quick-start/#install-stackrox-central),
 you can use helm charts to install Sensor, Collector, and Admission Controller. 
 
+- [Prerequisites](#prerequisites)
+- [Install Sensor using Helm chart](#install-sensor-using-helm-chart)
+- [Uninstall Sensor using Helm chart](#uninstall-sensor-using-helm-chart)
+- [Upgrade Sensor using Helm chart](#upgrade-sensor-using-helm-chart)
+- [Configuration](#configuration)
+
 ## Prerequisites
 To install the StackRox Kubernetes Security Platform's Sensor, Collector, and
 Admission Controller by using Helm charts, you must:
