@@ -33,8 +33,8 @@ you use.
 1. Navigate to the [stackrox/helm-charts](https://github.com/stackrox/helm-charts)
    repository, and download the helm charts folder that corresponds to the
    StackRox Kubernetes Security Platform version you are using. For example, if
-   you are using the StackRox Kubernetes Security Platform version 3.0.41.4,
-   download the folder named `3.0.41.4`.
+   you are using the StackRox Kubernetes Security Platform version 3.0.42.0,
+   download the folder named `3.0.42.0`.
 1. From the downloaded folder, modify the `values.yaml` file based on your
    environment. See the [Configuration](#configuration) section to understand the
    available parameters.
@@ -101,6 +101,17 @@ you use.
    - For Helm v3:
      ```
      helm upgrade --namespace stackrox sensor .
+     ```
+1. Run the following commands in every secured cluster in which you have enabled
+   the admission controller.
+   - For Kubernetes:
+     ```
+     kubectl -n stackrox patch deploy/admission-control -p '{"spec":{"template":{"spec":{"containers":[{"name": "admission-control","readinessProbe":  {"initialDelaySeconds": 5, "periodSeconds": 5, "failureThreshold": 1}}]}}}}'
+     ```
+   - For OpenShift:
+     ```
+     oc -n stackrox patch scc sensor -p '{"priority": 0}'
+     oc -n stackrox patch scc central -p '{"priority": 0}'
      ```
 
 ## Configuration

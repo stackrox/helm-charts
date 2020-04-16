@@ -33,8 +33,8 @@ you use.
 1. Navigate to the [stackrox/helm-charts](https://github.com/stackrox/helm-charts)
    repository, and download the helm charts folder that corresponds to the
    StackRox Kubernetes Security Platform version you are using. For example, if
-   you are using the StackRox Kubernetes Security Platform version 3.0.41,
-   download the folder named `3.0.41`.
+   you are using the StackRox Kubernetes Security Platform version 3.0.41.2,
+   download the folder named `3.0.41.2`.
 1. From the downloaded folder, modify the `values.yaml` file based on your
    environment. See the [Configuration](#configuration) section to understand the
    available parameters.
