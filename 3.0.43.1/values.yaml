@@ -18,16 +18,19 @@ config:
   collectionMethod: KERNEL_MODULE
   admissionControl:
     createService: false
+    createSecret: true
     listenOnUpdates: false
     enableService: false
     enforceOnUpdates: false
     scanInline: false
     disableBypass: false
     timeout: 3
+  collector:
+    createSecret: true
+  sensor:
+    createSecret: true
   registryOverride:
   disableTaintTolerations: true
   createUpgraderServiceAccount: false
 
 envVars:  []
-  
-
