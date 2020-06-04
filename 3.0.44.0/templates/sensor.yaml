@@ -221,7 +221,7 @@ spec:
       containers:
 {{ if ne .Values.config.collectionMethod "NO_COLLECTION"}}
       - name: collector
-        image: {{ printf "%s/%s:3.0.13-22-g13b9285325-latest" .Values.image.registry.collector .Values.image.repository.collector }}
+        image: {{ printf "%s/%s:3.0.14-latest" .Values.image.registry.collector .Values.image.repository.collector }}
         imagePullPolicy: Always
         env:
         - name: COLLECTOR_CONFIG
