@@ -10,9 +10,9 @@ you can use helm charts to install Sensor, Collector, and Admission Controller.
 > StackRox Kubernetes Security Platform you've installed.
 
 For example, to install  Sensor, Collector, and Admission Controller using Helm
-charts for the StackRox Kubernetes Security Platform version 3.0.48.1, view the
+charts for the StackRox Kubernetes Security Platform version 3.0.49.0, view the
 instructions in the
-[`3.0.48.1` directory](https://github.com/stackrox/helm-charts/tree/master/3.0.48.1).
+[`3.0.49.0` directory](https://github.com/stackrox/helm-charts/tree/master/3.0.49.0).
 
 ## License
 
