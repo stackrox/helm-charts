@@ -12,15 +12,7 @@ jobs:
         run: |
           SHELL=/bin/bash
           set -x
-          echo "3.0.43.1" | grep -E '^[0-9]+(\.[0-9]+)*$'
-          exit 0
-          echo "ls:"
-          ls
-          echo "grep:"
-          ls -ld | grep -E '^\d+(\.\d+)*$'
-          echo "egrep:"
-          ls -ld | egrep '^\d+(\.\d+)*$'
-          LATEST_VERSION="$(ls | egrep '^\d+(\.\d+)*$' | sort --version-sort | tail -n 1)"
+          LATEST_VERSION="$(ls | grep -E '^[0-9]+(\.[0-9]+)*$' | sort --version-sort | tail -n 1)"
           echo "LATEST VERSION is $LATEST_VERSION"
           exit 0
           sed -i.bak -E 's@(Latest version: |Latest%20version-|\[Latest version\]: \./)[0-9]+(\.[0-9]+)*@\1'"$LATEST_VERSION"'@g' README.md
