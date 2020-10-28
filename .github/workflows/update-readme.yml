@@ -11,13 +11,14 @@ jobs:
       - name: Updating README
         run: |
           SHELL=/bin/bash
+          set -x
           echo "wd=$(pwd)"
           echo "ls:"
           ls
-          echo "egrep:"
-          ls | egrep '^\d+(\.\d+)*$'
           echo "grep:"
           ls | grep -E '^\d+(\.\d+)*$'
+          echo "egrep:"
+          ls | egrep '^\d+(\.\d+)*$'
           LATEST_VERSION="$(ls | egrep '^\d+(\.\d+)*$' | sort --version-sort | tail -n 1)"
           echo "LATEST VERSION is $LATEST_VERSION"
           sed -i.bak -E 's@(Latest version: |Latest%20version-|\[Latest version\]: \./)[0-9]+(\.[0-9]+)*@\1'"$LATEST_VERSION"'@g' README.md
