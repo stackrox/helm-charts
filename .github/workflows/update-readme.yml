@@ -18,6 +18,7 @@ jobs:
           rm -f latest 2>/dev/null || true
           ln -s "./${LATEST_VERSION}/" latest
           git add latest
+          git update-index -q --really-refresh
           if git diff-index --quiet HEAD ; then
             echo "No updates."
           else
