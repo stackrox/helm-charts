@@ -1,0 +1,7 @@
+apiVersion: v2
+appVersion: 3.0.50.1
+description: Helm Chart for StackRox Central Clusters
+icon: https://www.stackrox.com/img/logo.svg
+name: stackrox-central-services
+type: application
+version: 50.1.0
