@@ -24,6 +24,9 @@ jobs:
             echo "git diff-index HEAD:"
             git diff-index HEAD
             echo
+            echo "git diff HEAD"
+            git diff HEAD
+            echo
             echo "exiting now"
             exit 0
             echo "Updated README and latest symlink"
