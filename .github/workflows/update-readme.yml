@@ -18,7 +18,7 @@ jobs:
           rm -f latest 2>/dev/null || true
           ln -s "./${LATEST_VERSION}/" latest
           git add latest
-          if git diff-index --quiet HEAD ; then
+          if git diff --quiet HEAD; then
             echo "No updates."
           else
             echo "Updated README and latest symlink"
