@@ -12,8 +12,7 @@ jobs:
         run: |
           SHELL=/bin/bash
           set -x
-          echo "wd=$(pwd)"
-          echo "3.0.43.1" | grep -E '^\d+(\.\d+)*'
+          echo "3.0.43.1" | grep -E '[0-9]'
           exit 0
           echo "ls:"
           ls
