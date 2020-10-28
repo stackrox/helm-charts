@@ -24,6 +24,9 @@ jobs:
             echo "git diff-index HEAD:"
             git diff-index HEAD
             echo
+            echo "ls -l:"
+            ls -l
+            echo
             echo "git status:"
             git status
             echo
