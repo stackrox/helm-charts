@@ -16,11 +16,12 @@ jobs:
           echo "ls:"
           ls
           echo "grep:"
-          ls | grep -E '^\d+(\.\d+)*$'
+          ls -ld | grep -E '^\d+(\.\d+)*$'
           echo "egrep:"
-          ls | egrep '^\d+(\.\d+)*$'
+          ls -ld | egrep '^\d+(\.\d+)*$'
           LATEST_VERSION="$(ls | egrep '^\d+(\.\d+)*$' | sort --version-sort | tail -n 1)"
           echo "LATEST VERSION is $LATEST_VERSION"
+          exit 0
           sed -i.bak -E 's@(Latest version: |Latest%20version-|\[Latest version\]: \./)[0-9]+(\.[0-9]+)*@\1'"$LATEST_VERSION"'@g' README.md
           rm -f "README.md.bak" 2>/dev/null || true
           rm -f latest 2>/dev/null || true
@@ -40,6 +41,6 @@ jobs:
               exit 1
             fi
             git commit -am "$msg 🤖"
-            git push origin HEAD:master
+            git push origin HEAD:mc/testing-dont-merge
           fi
           echo "✓ Done"
