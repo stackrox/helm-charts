@@ -1,6 +1,6 @@
 name: Update repository's main README file
 
-on: [push]
+on: [push, pull_request]
 jobs:
   README_UPDATE:
     runs-on: ubuntu-latest
@@ -21,6 +21,11 @@ jobs:
           if git diff-index --quiet HEAD ; then
             echo "No updates."
           else
+            echo "git diff-index HEAD:"
+            git diff-index HEAD
+            echo
+            echo "exiting now"
+            exit 0
             echo "Updated README and latest symlink"
             git config --global user.name 'roxbot'
             git config --global user.email 'roxbot@users.noreply.github.com'
