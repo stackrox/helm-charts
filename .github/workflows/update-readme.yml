@@ -13,6 +13,8 @@ jobs:
           SHELL=/bin/bash
           set -x
           echo "wd=$(pwd)"
+          echo "3.0.43.1" | grep -E '^\d+(\.\d+)*$'
+          exit 0
           echo "ls:"
           ls
           echo "grep:"
