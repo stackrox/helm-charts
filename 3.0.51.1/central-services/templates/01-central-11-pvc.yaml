@@ -1,0 +1,26 @@
+{{- include "srox.init" . -}}
+
+{{ if ._rox.central.persistence._pvcCfg -}}
+{{- $claimName := ._rox.central.persistence._pvcCfg.claimName -}}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ $claimName }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "srox.labels" (list . "persistentvolumeclaim" $claimName) | nindent 4 }}
+  annotations:
+    {{- include "srox.annotations" (list . "persistentvolumeclaim" $claimName) | nindent 4 }}
+    "helm.sh/hook": "pre-install,pre-upgrade"
+    "helm.sh/resource-policy": keep
+    "helm.sh/hook-delete-policy": never
+spec:
+  {{- if ._rox.central.persistence._pvcCfg.storageClass }}
+  storageClassName: {{ ._rox.central.persistence._pvcCfg.storageClass }}
+  {{- end}}
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ include "srox.formatStorageSize" ._rox.central.persistence._pvcCfg.size }}
+{{- end }}
