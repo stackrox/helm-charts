@@ -1,6 +1,9 @@
 name: Update repository's main README file
 
-on: [push]
+on:
+  push:
+    branches: [main]
+
 jobs:
   README_UPDATE:
     runs-on: ubuntu-latest
@@ -20,6 +23,8 @@ jobs:
           git add latest
           if git diff --quiet HEAD; then
             echo "No updates."
+            # Keep master in sync with main
+            git push origin HEAD:master
           else
             echo "Updated README and latest symlink"
             git config --global user.name 'roxbot'
@@ -32,6 +37,8 @@ jobs:
               exit 1
             fi
             git commit -am "$msg 🤖"
+            git push origin HEAD:main
+            # Keep master in sync with main
             git push origin HEAD:master
           fi
           echo "✓ Done"
