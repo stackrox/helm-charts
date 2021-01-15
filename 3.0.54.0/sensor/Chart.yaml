@@ -1,0 +1,7 @@
+apiVersion: v2 
+name: sensor
+icon: https://www.stackrox.com/img/logo.svg
+description: Helm Chart for StackRox Secured Clusters
+type: application
+version: 54.0.0
+appVersion: 3.0.54.0

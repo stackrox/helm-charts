@@ -1,0 +1,97 @@
+defaults:
+
+  centralEndpoint: "central.{{ ._rox._namespace }}:443"
+  createUpgraderServiceAccount: false
+
+  {{- if .Release.IsInstall }}
+  createSecrets: true
+  {{- end }}
+
+  exposeMonitoring: false
+
+  helmManaged: true
+
+  imagePullSecrets:
+    allowNone: true
+    useExisting: []
+    useFromDefaultServiceAccount: true
+
+  image:
+    registry: stackrox.io
+    main:
+      name: main
+      pullPolicy: IfNotPresent
+    collector:
+      registry: collector.stackrox.io
+      name: collector
+
+  ca:
+    cert: "@?secrets/ca.pem"
+
+  additionalCAs: {}
+
+  sensor:
+    imagePullPolicy: {{ ._rox.image.main.pullPolicy }}
+    endpoint: "sensor.{{ ._rox.namespace }}:443"
+
+    resources:
+      requests:
+        memory: "1Gi"
+        cpu: "1"
+      limits:
+        memory: "4Gi"
+        cpu: "2"
+
+    serviceTLS:
+      cert: "@?secrets/sensor-cert.pem"
+      key: "@?secrets/sensor-key.pem"
+
+  admissionControl:
+    imagePullPolicy: {{ ._rox.image.main.pullPolicy }}
+    resources:
+      requests:
+        memory: "100Mi"
+        cpu: "50m"
+      limits:
+        memory: "500Mi"
+        cpu: "500m"
+
+    enable: false
+    listenOnUpdates: false
+
+    dynamic:
+      enforce: false
+      scanInline: false
+      disableBypass: false
+      timeout: 3
+      enforceOnUpdates: false
+
+    serviceTLS:
+      cert: "@?secrets/admission-control-cert.pem"
+      key: "@?secrets/admission-control-key.pem"
+
+  collector:
+    collectionMethod: "KERNEL_MODULE"
+    disableTaintTolerations: false
+    imagePullPolicy: {{ ._rox.image.collector.pullPolicy }}
+    complianceImagePullPolicy: {{ ._rox.image.main.pullPolicy }}
+
+    resources:
+      requests:
+        memory: "320Mi"
+        cpu: "50m"
+      limits:
+        memory: "1Gi"
+        cpu: "750m"
+
+    complianceResources:
+      requests:
+        memory: "10Mi"
+        cpu: "10m"
+      limits:
+        memory: "2Gi"
+        cpu: "1"
+
+    serviceTLS:
+      cert: "@?secrets/collector-cert.pem"
+      key: "@?secrets/collector-key.pem"
