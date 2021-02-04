@@ -1,4 +1,4 @@
-[![Latest version: 3.0.50.1](https://img.shields.io/badge/Latest%20version-3.0.50.1-green.svg)][Latest version]
+[![Latest version: 3.0.55.0](https://img.shields.io/badge/Latest%20version-3.0.55.0-green.svg)][Latest version]
 
 # Helm charts for the StackRox Kubernetes Security Platform
 
@@ -80,4 +80,4 @@ Helm charts for the [StackRox Kubernetes Security Platform](https://www.stackrox
 licensed under [Apache License 2.0](./LICENSE).
 
 
-[Latest version]: ./3.0.50.1/
+[Latest version]: ./3.0.55.0/
