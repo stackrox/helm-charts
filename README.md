@@ -22,7 +22,8 @@ Afterward, you can update, download, and install the available charts. For examp
 The StackRox Kubernetes Security Platform Helm charts repository includes the following charts:
 
 1. [`central-services`](#central-services-chart)
-1. [`sensor`](#sensor-chart)
+1. [`secured-cluster-services`](#secured-cluster-services-chart) (version 3.0.55.0 and newer)
+1. [`sensor`](#sensor-chart) (version 3.0.54.0 and older)
 
 ### Central services chart
 
@@ -43,7 +44,35 @@ For example, to install Central using Helm charts for the StackRox Kubernetes Se
 version 3.0.51.0, view the instructions in the
 [`3.0.51.0/central-services`](./3.0.51.0/central-services/) directory.
 
+### Secured cluster services chart
+
+> **IMPORTANT**
+>
+> We publish Helm charts with every new release of the StackRox Kubernetes Security Platform. Make
+> sure that you use a version that matches the StackRox Kubernetes Security Platform version you've
+> installed.
+
+> **NOTE**
+>
+> You can use the secured cluster services chart if you are running version 3.0.55.0 or newer
+> of the StackRox Kubernetes Security Platform. If you are running an older version, please use
+> the [sensor chart](#sensor-chart) described below.
+
+The secured cluster services charts for the StackRox Kubernetes Security Platform version 3.0.55 and
+newer are published in the `secured-cluster-services/` sub-directory of the respective version
+directory.
+
+For example, to install  Sensor, Collector, and Admission Controller using Helm charts for the
+StackRox Kubernetes Security Platform version 3.0.55.0, view the instructions in the
+[`3.0.55.0/secured-cluster-services`](./3.0.55.0/secured-cluster-services) directory.
+
 ### Sensor chart
+
+> **NOTE**
+>
+> We have discontinued the sensor Helm chart. The last version of the StackRox Kubernetes Security
+> Platform for which you can use this chart is version 3.0.54.0. If you are using a newer version,
+> please use the [secured cluster services chart](#secured-cluster-services-chart) described above.
 
 After [installing StackRox
 Central](https://install.stackrox.com/docs/get-started/quick-start-helm/), you can use the Sensor
