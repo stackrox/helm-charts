@@ -1,0 +1,34 @@
+
+envVars:
+- name: ROX_ADMISSION_CONTROL_SERVICE
+  value: "true"
+- name: ROX_AWS_SECURITY_HUB_INTEGRATION
+  value: "true"
+- name: ROX_COMPLIANCE_IN_ROCKSDB
+  value: "true"
+- name: ROX_CSV_EXPORT
+  value: "false"
+- name: ROX_HOST_SCANNING
+  value: "false"
+- name: ROX_INTEGRATIONS_AS_CONFIG
+  value: "false"
+- name: ROX_K8S_EVENTS_DETECTION
+  value: "true"
+- name: ROX_NETWORK_DETECTION
+  value: "true"
+- name: ROX_NETWORK_DETECTION_BASELINE_VIOLATION
+  value: "false"
+- name: ROX_NETWORK_FLOWS_SEARCH_FILTER_UI
+  value: "true"
+- name: ROX_NETWORK_GRAPH_EXTERNAL_SRCS
+  value: "true"
+- name: ROX_NETWORK_GRAPH_PORTS
+  value: "true"
+- name: ROX_SENSOR_INSTALLATION_EXPERIENCE
+  value: "true"
+- name: ROX_SENSOR_TLS_CHALLENGE
+  value: "true"
+- name: ROX_SUPPORT_SLIM_COLLECTOR_MODE
+  value: "true"
+- name: ROX_SYSLOG_INTEGRATION
+  value: "true"
