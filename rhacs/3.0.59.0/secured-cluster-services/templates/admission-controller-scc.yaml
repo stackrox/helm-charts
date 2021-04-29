@@ -1,0 +1,44 @@
+{{- include "srox.init" . -}}
+
+{{- if ._rox.env.openshift }}
+apiVersion: security.openshift.io/v1
+kind: SecurityContextConstraints
+metadata:
+  name: admission-control
+  labels:
+    {{- include "srox.labels" (list . "securitycontextconstraints" "admission-control") | nindent 4 }}
+    auto-upgrade.stackrox.io/component: "sensor"
+  annotations:
+    {{- include "srox.annotations" (list . "securitycontextconstraints" "admission-control") | nindent 4 }}
+    kubernetes.io/description: admission-control is the security constraint for the admission controller
+users:
+  - system:serviceaccount:{{ ._rox._namespace }}:admission-control
+priority: 0
+runAsUser:
+  type: RunAsAny
+seLinuxContext:
+  type: RunAsAny
+seccompProfiles:
+  - '*'
+supplementalGroups:
+  type: RunAsAny
+fsGroup:
+  type: RunAsAny
+groups: []
+readOnlyRootFilesystem: true
+allowHostDirVolumePlugin: false
+allowHostIPC: false
+allowHostNetwork: false
+allowHostPID: false
+allowHostPorts: false
+allowPrivilegeEscalation: false
+allowPrivilegedContainer: false
+allowedCapabilities: []
+defaultAddCapabilities: []
+requiredDropCapabilities: []
+volumes:
+  - configMap
+  - downwardAPI
+  - emptyDir
+  - secret
+{{- end }}
