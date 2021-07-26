@@ -1,0 +1,56 @@
+[![Latest version: 30.50.1](https://img.shields.io/badge/Latest%20version-30.50.1-green.svg)][Latest version]
+
+# Helm charts for the StackRox Kubernetes Security Platform
+
+This repository contains Helm charts for the [StackRox Kubernetes Security Platform](https://www.stackrox.com/platform/).
+
+These Helm charts are published here for reference. They are also available via a Helm chart server hosted
+at https://charts.stackrox.io/. Use the following commands to add this server as a repository to your local
+Helm setup:
+```bash
+$ helm repo add stackrox https://charts.stackrox.io/
+```
+Afterwards, you can download or install charts via `helm pull stackrox/sensor` or `helm install stackrox/central-services`.
+
+## Charts for Central Cluster Services
+
+The Helm chart for the StackRox Central Cluster Services is called `central-services`. This chart is only available
+for versions 3.0.50.0 and above. For historical reasons, the charts for versions 3.0.50.x are published in the directory
+`[3.0.50.x-central-services](./3.0.50.0-central-services)`. The charts for versions 3.0.51.0 and above will be published
+in a subdirectory called `central-services` of the respective version directory.
+
+For instructions on how to install the StackRox Kubernetes Security Platform with these charts, please refer to the
+[quickstart instructions](https://install.stackrox.com/docs/get-started/quick-start-helm/).
+
+## Charts for Secured Cluster Services
+
+After you [install StackRox Central](https://install.stackrox.com/docs/get-started/quick-start-helm/),
+you can use the Helm charts for StackRox Secured Cluster Services to install Sensor, Collector, and Admission Controller.
+These Helm charts can be used independent of the installation method you chose for the central cluster services.
+
+> **IMPORTANT**
+>
+> We publish Helm charts with every new release of the StackRox Kubernetes
+> Security Platform. Make sure to use a version that matches the version of the
+> StackRox Kubernetes Security Platform you've installed.
+
+> **PLEASE NOTE**
+>
+> Prior to version 3.0.51.0, the Helm chart for secured cluster services for a given
+> StackRox Kubernetes Security Platform version will be located in a directory
+> named after the version. From version 3.0.51.0 on, the Helm chart will be
+> stored in a subdirectory called `sensor/` of the version directory.
+
+For example, to install  Sensor, Collector, and Admission Controller using Helm
+charts for the StackRox Kubernetes Security Platform version 3.0.50.1, view the
+instructions in the
+[`3.0.50.1` directory](./3.0.50.1). For version 3.0.51.0, the instructions will
+be located in the [`3.0.51.0/sensor`](./3.0.51.0/sensor) directory.
+
+## License
+
+Helm charts for the [StackRox Kubernetes Security Platform](https://www.stackrox.com/platform/)
+are licensed under [Apache License 2.0](./LICENSE).
+
+
+[Latest version]: ./30.50.1/
