@@ -1,0 +1,48 @@
+# This file contains basic configuration options for all services
+
+centralEndpoint: "central.{{ required "unknown namespace" ._rox._namespace }}.svc:443"
+createUpgraderServiceAccount: false
+
+{{- if .Release.IsInstall }}
+createSecrets: true
+{{- end }}
+
+exposeMonitoring: false
+
+helmManaged: true
+
+clusterName: ""
+confirmNewClusterName: ""
+
+imagePullSecrets:
+  allowNone: true
+  useExisting: []
+  useFromDefaultServiceAccount: true
+
+sensor:
+  endpoint: "sensor.{{ required "unknown namespace" ._rox._namespace }}.svc:443"
+
+admissionControl:
+  listenOnCreates: false
+  listenOnUpdates: false
+  listenOnEvents: {{ not ._rox.env.openshift }}
+  dynamic:
+    enforceOnCreates: false
+    scanInline: false
+    disableBypass: false
+    timeout: 3
+    enforceOnUpdates: false
+
+collector:
+  collectionMethod: "KERNEL_MODULE"
+  disableTaintTolerations: false
+
+auditLogs:
+  disableCollection: {{ ne ._rox.env.openshift 4 }}
+---
+sensor:
+  exposeMonitoring: {{ ._rox.exposeMonitoring }}
+collector:
+  exposeMonitoring: {{ ._rox.exposeMonitoring }}
+admissionControl:
+  exposeMonitoring: {{ ._rox.exposeMonitoring }}
