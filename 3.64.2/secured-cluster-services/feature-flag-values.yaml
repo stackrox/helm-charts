@@ -1,0 +1,30 @@
+
+envVars:
+- name: ROX_ACTIVE_VULN_MANAGEMENT
+  value: "false"
+- name: ROX_COMPLIANCE_IN_ROCKSDB
+  value: "true"
+- name: ROX_COMPLIANCE_OPERATOR_INTEGRATION
+  value: "true"
+- name: ROX_CSV_EXPORT
+  value: "false"
+- name: ROX_ENABLE_ROLLBACK
+  value: "true"
+- name: ROX_INACTIVE_IMAGE_SCANNING_UI
+  value: "true"
+- name: ROX_INTEGRATIONS_AS_CONFIG
+  value: "false"
+- name: ROX_K8S_AUDIT_LOG_DETECTION
+  value: "true"
+- name: ROX_NETWORK_DETECTION_BASELINE_SIMULATION
+  value: "true"
+- name: ROX_NETWORK_DETECTION_BASELINE_VIOLATION
+  value: "true"
+- name: ROX_NETWORK_DETECTION_BLOCKED_FLOWS
+  value: "false"
+- name: ROX_NS_ANNOTATION_FOR_NOTIFIERS
+  value: "true"
+- name: ROX_SCOPED_ACCESS_CONTROL_V2
+  value: "true"
+- name: ROX_SYSTEM_POLICY_MITRE_FRAMEWORK
+  value: "false"
