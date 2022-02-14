@@ -1,0 +1,30 @@
+imagePullSecrets:
+  username: true
+  password: true
+mainImagePullSecrets:
+  username: true
+  password: true
+collectorImagePullSecrets:
+  username: true
+  password: true
+ca:
+  cert: true
+sensor:
+  serviceTLS:
+    cert: true
+    key: true
+  resources: true
+  nodeSelector: true
+admissionControl:
+  serviceTLS:
+    cert: true
+    key: true
+  resources: true
+  nodeSelector: true
+collector:
+  serviceTLS:
+    cert: true
+    key: true
+  resources: true
+  complianceResources: true
+  nodeSelector: true
