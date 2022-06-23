@@ -1,0 +1,7 @@
+apiVersion: v2 
+name: stackrox-secured-cluster-services
+icon: https://www.stackrox.com/img/logo.svg
+description: Helm Chart for StackRox Secured Clusters
+type: application
+version: 69.2.0
+appVersion: 3.69.2
