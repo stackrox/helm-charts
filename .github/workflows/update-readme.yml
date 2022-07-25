@@ -18,10 +18,6 @@ jobs:
           echo "LATEST VERSION is $LATEST_VERSION"
           sed -i.bak -E 's@(Latest version: |Latest%20version-|\[Latest version\]: \./)[0-9]+(\.[0-9]+)*@\1'"$LATEST_VERSION"'@g' README.md
           rm -f "README.md.bak" 2>/dev/null || true
-          if test -f "opensource/README.md"; then
-            sed -i.bak -E 's@(Latest version: |Latest%20version-|\[Latest version\]: \./)[0-9]+(\.[0-9]+)*@\1'"$LATEST_VERSION"'@g' opensource/README.md
-            rm -f "opensource/README.md.bak" 2>/dev/null || true
-          fi
           rm -f latest 2>/dev/null || true
           ln -s "./${LATEST_VERSION}/" latest
           git add latest
