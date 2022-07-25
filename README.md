@@ -1,107 +1,53 @@
-[![Latest version: 3.70.1](https://img.shields.io/badge/Latest%20version-3.70.1-green.svg)][Latest version]
+[![Latest version: 3.0.55.0](https://img.shields.io/badge/Latest%20version-3.0.55.0-green.svg)][Latest version]
 
 # Helm charts for the StackRox Kubernetes Security Platform
 
 This repository contains Helm charts for the [StackRox Kubernetes Security
-Platform](https://www.stackrox.com/platform/). These Helm charts are published here for reference.
-You can also get these charts from our Helm chart server at https://charts.stackrox.io/.
+Platform](https://www.stackrox.io/) as well as [Red Hat Advanced Cluster Security](https://www.redhat.com/en/technologies/cloud-computing/openshift/advanced-cluster-security-kubernetes) (ACS). StackRox is the Open Source upstream project of ACS. 
 
-To use these charts, add https://charts.stackrox.io/ as a repository:
+
+To use the StackRox charts, add https://raw.githubusercontent.com/stackrox/helm-charts/main/opensource/ as a repository:
 ```bash
-$ helm repo add stackrox https://charts.stackrox.io/
+$ helm repo add stackrox https://raw.githubusercontent.com/stackrox/helm-charts/main/opensource/
 ```
 
-Afterward, you can update, download, and install the available charts. For example:
+Afterwards, you can update, download, and install the available charts. For example:
 
 - Use the `helm repo update` command to get the latest version of the charts.
-- Use the `helm pull stackrox/sensor` command to download the `sensor` chart.
-- Use the `helm install stackrox/central-services` command to install the `central-services` chart.
+- Use the `helm install stackrox/stackrox-central-services` command to install the `central-services` chart.
+- Use the `helm pull stackrox/stackrox-secured-cluster-services` command to download the `secured-cluster-services` chart.
+
+
+## Installation
+
+For instructions on how to install the StackRox Kubernetes Security Platform with these Helm charts,
+see [Quick Start (Helm)](https://github.com/stackrox/stackrox#quick-installation-via-helm).
+
+
+To install ACS, follow the [OpenShift docs Helm quick Install Guide](https://docs.openshift.com/acs/installing/installing_helm/install-helm-quick.html).
 
 ## Included charts
 
 The StackRox Kubernetes Security Platform Helm charts repository includes the following charts:
 
 1. [`central-services`](#central-services-chart)
-1. [`secured-cluster-services`](#secured-cluster-services-chart) (version 3.0.55.0 and newer)
-1. [`sensor`](#sensor-chart) (version 3.0.54.0 and older)
+2. [`secured-cluster-services`](#secured-cluster-services-chart)
 
 ### Central services chart
 
-The Helm chart to install StackRox Central is called `central-services`. This chart is only
-available for the StackRox Kubernetes Security Platform version 3.0.50.0 and newer.
+The Helm chart to install StackRox Central is called `stackrox-central-services`.
 
-> **NOTE**
->
-> 1. The Central services chart for the StackRox Kubernetes Security Platform version 3.0.50.x is
->    published in the [`3.0.50.x-central-services`](./3.0.50.0-central-services) directory.
-> 1. There is no Central services chart available for the StackRox Kubernetes Security Platform
->    version 3.0.49 and older.
-
-The Central services chart for the StackRox Kubernetes Security Platform version 3.0.51 and newer
-are published in the `central-services/` sub-directory of the respective version directory.
-
-For example, to install Central using Helm charts for the StackRox Kubernetes Security Platform
-version 3.0.51.0, view the instructions in the
-[`3.0.51.0/central-services`](./3.0.51.0/central-services/) directory.
+The installation can be customized to your needs. Please consult the documentation at OpenShift docs for detailed configuration options:  
+[Configure the central-services Helm chart](https://docs.openshift.com/acs/installing/installing_helm/install-helm-customization.html#configure-central-services-helm-chart)
 
 ### Secured cluster services chart
 
-> **IMPORTANT**
->
-> We publish Helm charts with every new release of the StackRox Kubernetes Security Platform. Make
-> sure that you use a version that matches the StackRox Kubernetes Security Platform version you've
-> installed.
+The chart to install per-cluster and per-node components of StackRox is called `stackrox-secured-cluster-services`.
 
-> **NOTE**
->
-> You can use the secured cluster services chart if you are running version 3.0.55.0 or newer
-> of the StackRox Kubernetes Security Platform. If you are running an older version, please use
-> the [sensor chart](#sensor-chart) described below.
+The installation can be customized to your needs. Consult the OpenShift docs for detailed configuration options:  
+[Configuring the secured-cluster-services Helm chart
+](https://docs.openshift.com/acs/installing/installing_helm/install-helm-customization.html#configure-secured-cluster-services-helm-chart)
 
-The secured cluster services charts for the StackRox Kubernetes Security Platform version 3.0.55 and
-newer are published in the `secured-cluster-services/` sub-directory of the respective version
-directory.
-
-For example, to install  Sensor, Collector, and Admission Controller using Helm charts for the
-StackRox Kubernetes Security Platform version 3.0.55.0, view the instructions in the
-[`3.0.55.0/secured-cluster-services`](./3.0.55.0/secured-cluster-services) directory.
-
-### Sensor chart
-
-> **NOTE**
->
-> We have discontinued the sensor Helm chart. The last version of the StackRox Kubernetes Security
-> Platform for which you can use this chart is version 3.0.54.0. If you are using a newer version,
-> please use the [secured cluster services chart](#secured-cluster-services-chart) described above.
-
-After [installing StackRox
-Central](https://install.stackrox.com/docs/get-started/quick-start-helm/), you can use the Sensor
-Helm chart to install Sensor, Collector, and Admission Controller. You can use Sensor Helm chart
-independently of the installation method you've chosen to install Central.
-
-> **IMPORTANT**
->
-> We publish Helm charts with every new release of the StackRox Kubernetes Security Platform. Make
-> sure that you use a version that matches the StackRox Kubernetes Security Platform version you've
-> installed.
-
-> **NOTE**
->
-> The Sensor chart for the StackRox Kubernetes Security Platform version 3.0.50 and older are
-> published in the main version directory.
-
-The Sensor chart for the StackRox Kubernetes Security Platform version 3.0.51 and newer are
-published in the `sensor/` sub-directory of the respective version directory.
-
-For example, to install  Sensor, Collector, and Admission Controller using Helm charts for the
-StackRox Kubernetes Security Platform:
-- version 3.0.50.1, view the instructions in [`3.0.50.1`](./3.0.50.1) directory.
-- version 3.0.51.0, view the instructions in the [`3.0.51.0/sensor`](./3.0.51.0/sensor) directory.
-
-## Installation
-
-For instructions on how to install the StackRox Kubernetes Security Platform with these Helm charts,
-see [Quick Start (Helm)](https://install.stackrox.com/docs/get-started/quick-start-helm/).
 
 ## License
 
@@ -109,4 +55,4 @@ Helm charts for the [StackRox Kubernetes Security Platform](https://www.stackrox
 licensed under [Apache License 2.0](./LICENSE).
 
 
-[Latest version]: ./3.70.1/
+[Latest version]: ./3.0.55.0/
