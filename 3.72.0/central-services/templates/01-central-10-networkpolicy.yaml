@@ -1,0 +1,69 @@
+{{- include "srox.init" . -}}
+
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-ext-to-central
+  namespace: {{.Release.Namespace}}
+  labels:
+    {{- include "srox.labels" (list . "networkpolicy" "allow-ext-to-central") | nindent 4 }}
+  annotations:
+    {{- include "srox.annotations" (list . "networkpolicy" "allow-ext-to-central") | nindent 4 }}
+spec:
+  ingress:
+    {{- toYaml ._rox.central._netPolIngressRules | nindent 4 }}
+  podSelector:
+    matchLabels:
+      app: central
+  policyTypes:
+  - Ingress
+
+{{ if ._rox.central.exposeMonitoring }}
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: central-monitoring
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "srox.labels" (list . "networkpolicy" "central-monitoring") | nindent 4 }}
+  annotations:
+    {{- include "srox.annotations" (list . "networkpolicy" "central-monitoring") | nindent 4 }}
+spec:
+  ingress:
+  - ports:
+    - port: 9090
+      protocol: TCP
+  podSelector:
+    matchLabels:
+      app: central
+  policyTypes:
+    - Ingress
+{{ end }}
+{{- if ._rox.central.enableCentralDB }}
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: central-db
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "srox.labels" (list . "networkpolicy" "central-db") | nindent 4 }}
+  annotations:
+    {{- include "srox.annotations" (list . "networkpolicy" "central-db") | nindent 4 }}
+spec:
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+    - from:
+      - podSelector:
+          matchLabels:
+            app: central
+      ports:
+      - port: 5432
+        protocol: TCP
+  podSelector:
+    matchLabels:
+      app: central-db
+{{- end }}

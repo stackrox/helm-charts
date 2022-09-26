@@ -1,0 +1,84 @@
+defaults:
+
+  imagePullSecrets:
+    allowNone: false
+    useExisting: []
+    useFromDefaultServiceAccount: true
+
+  image:
+    registry: stackrox.io
+
+  env:
+    offlineMode: false
+
+  central:
+    config: "@config/central/config.yaml|config/central/config.yaml.default"
+    endpointsConfig: "@config/central/endpoints.yaml|config/central/endpoints.yaml.default"
+
+    exposeMonitoring: false
+
+    image:
+      name: main
+      tag: 3.72.0
+
+    resources:
+      requests:
+        memory: "4Gi"
+        cpu: "1500m"
+      limits:
+        memory: "8Gi"
+        cpu: "4000m"
+
+    exposure:
+      loadBalancer:
+        enabled: false
+        port: 443
+      nodePort:
+        enabled: false
+        port: null
+      route:
+        enabled: false
+
+  scanner:
+    disable: false
+    replicas: 3
+    logLevel: INFO
+    mode: full
+
+    autoscaling:
+      disable: false
+      minReplicas: 2
+      maxReplicas: 5
+
+    resources:
+      requests:
+        memory: "1500Mi"
+        cpu: "1000m"
+      limits:
+        memory: "4Gi"
+        cpu: "2000m"
+
+    image:
+      name: scanner
+      tag: 3.72.0
+
+    dbResources:
+      limits:
+        cpu: "2000m"
+        memory: "4Gi"
+      requests:
+        cpu: "200m"
+        memory: "200Mi"
+
+    dbImage:
+      name: scanner-db
+      tag: 3.72.0
+
+  system:
+    createSCCs: true
+
+  enableOpenShiftMonitoring: false
+
+pvcDefaults:
+  claimName: "stackrox-db"
+  size: "100Gi"
