@@ -2,8 +2,19 @@ apiVersion: v1
 entries:
   stackrox-central-services:
   - apiVersion: v2
+    appVersion: 3.72.1
+    created: "2022-10-18T17:09:44.015432285Z"
+    description: Helm Chart for StackRox Central Service
+    digest: dffec915f18f9f0c88f7609ad6fb415e281557bf8695357dc1cecc0b4f1a8936
+    icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
+    name: stackrox-central-services
+    type: application
+    urls:
+    - stackrox-central-services-72.1.0.tgz
+    version: 72.1.0
+  - apiVersion: v2
     appVersion: 3.72.0
-    created: "2022-10-13T20:24:14.788876944Z"
+    created: "2022-10-18T17:09:44.012856038Z"
     description: Helm Chart for StackRox Central Service
     digest: 8be952be40ef29b13fc95bac4d6dff5b9289d34e32a32497e8465b4c1cce661e
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -14,7 +25,7 @@ entries:
     version: 72.0.0
   - apiVersion: v2
     appVersion: 3.71.2
-    created: "2022-10-13T20:24:14.783447344Z"
+    created: "2022-10-18T17:09:44.010417114Z"
     description: Helm Chart for StackRox Central Clusters
     digest: 7ff76bf8dc53b249ab1d9c61fd203f834777a39346e217e18862cb6b47808204
     icon: https://www.stackrox.com/img/logo.svg
@@ -25,7 +36,7 @@ entries:
     version: 71.2.0
   - apiVersion: v2
     appVersion: 3.71.0
-    created: "2022-10-13T20:24:14.779401461Z"
+    created: "2022-10-18T17:09:44.008125933Z"
     description: Helm Chart for StackRox Central Clusters
     digest: 22115098ea95e326a08063c0fd5089647d729e58d6d668a9ad22841055f17498
     icon: https://www.stackrox.com/img/logo.svg
@@ -36,7 +47,7 @@ entries:
     version: 71.0.0
   - apiVersion: v2
     appVersion: 3.70.0
-    created: "2022-10-13T20:24:14.775672708Z"
+    created: "2022-10-18T17:09:44.00578564Z"
     description: Helm Chart for StackRox Central Clusters
     digest: db1c6b84de673bcf72f41b21059b020ad91bd116ddb38772fc0292296e484e5f
     icon: https://www.stackrox.com/img/logo.svg
@@ -47,8 +58,19 @@ entries:
     version: 70.0.0
   stackrox-secured-cluster-services:
   - apiVersion: v2
+    appVersion: 3.72.1
+    created: "2022-10-18T17:09:44.029700543Z"
+    description: Helm Chart for StackRox Secured Clusters
+    digest: b7d6a675beef0e81bb78e8fbc15b12d9e6182f45918e6a4e9fd8833c6cd8b03e
+    icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
+    name: stackrox-secured-cluster-services
+    type: application
+    urls:
+    - stackrox-secured-cluster-services-72.1.0.tgz
+    version: 72.1.0
+  - apiVersion: v2
     appVersion: 3.72.0
-    created: "2022-10-13T20:24:14.805025826Z"
+    created: "2022-10-18T17:09:44.027078375Z"
     description: Helm Chart for StackRox Secured Clusters
     digest: 099a3eb3a13c5fc7607d654b0bde4934c6cc5cd8c1c473a3cb64dbf75c540368
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -59,7 +81,7 @@ entries:
     version: 72.0.0
   - apiVersion: v2
     appVersion: 3.71.2
-    created: "2022-10-13T20:24:14.799551607Z"
+    created: "2022-10-18T17:09:44.023695449Z"
     description: Helm Chart for StackRox Secured Clusters
     digest: 7624e7c16f5f22aaa34ffac654606fb974813f895f312cd1fbd6c103959e9ad0
     icon: https://www.stackrox.com/img/logo.svg
@@ -70,7 +92,7 @@ entries:
     version: 71.2.0
   - apiVersion: v2
     appVersion: 3.71.0
-    created: "2022-10-13T20:24:14.796102772Z"
+    created: "2022-10-18T17:09:44.021264535Z"
     description: Helm Chart for StackRox Secured Clusters
     digest: eb8decbde7b849b7b21357c0b2812b404b6c08f69e97d2a57478a413223f21e3
     icon: https://www.stackrox.com/img/logo.svg
@@ -81,7 +103,7 @@ entries:
     version: 71.0.0
   - apiVersion: v2
     appVersion: 3.70.0
-    created: "2022-10-13T20:24:14.792298562Z"
+    created: "2022-10-18T17:09:44.01877557Z"
     description: Helm Chart for StackRox Secured Clusters
     digest: e6ef2cdc20620fab37e0cfd6b5a5646c83e5b1360bd0a7eddd835f5824c16c8a
     icon: https://www.stackrox.com/img/logo.svg
@@ -90,4 +112,4 @@ entries:
     urls:
     - stackrox-secured-cluster-services-70.0.0.tgz
     version: 70.0.0
-generated: "2022-10-13T20:24:14.772111906Z"
+generated: "2022-10-18T17:09:44.002679631Z"
