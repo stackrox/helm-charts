@@ -3,7 +3,7 @@ entries:
   stackrox-central-services:
   - apiVersion: v2
     appVersion: 4.1.2
-    created: "2023-07-26T08:27:53.596528539Z"
+    created: "2023-08-10T10:18:56.119223+02:00"
     description: Helm Chart for StackRox Central Service
     digest: 3add7559d60bec74a5627d859bdb73f2787e476f3b4d801e81e85835fa44cfcc
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -14,7 +14,7 @@ entries:
     version: 400.1.2
   - apiVersion: v2
     appVersion: 4.1.1
-    created: "2023-07-26T08:27:53.593845168Z"
+    created: "2023-08-10T10:18:56.117339+02:00"
     description: Helm Chart for StackRox Central Service
     digest: c4e11d64ff283573ecd6129e5759f0c20e0e7e18ea5fae2813d20e5c03d5f47d
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -25,7 +25,7 @@ entries:
     version: 400.1.1
   - apiVersion: v2
     appVersion: 4.1.0
-    created: "2023-07-26T08:27:53.591178096Z"
+    created: "2023-08-10T10:18:56.115249+02:00"
     description: Helm Chart for StackRox Central Service
     digest: 9daf73d7e2d5930d4b8dc7730ff167046429ef18cb4b4b6bf1e1d7f51c95223a
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -35,8 +35,19 @@ entries:
     - stackrox-central-services-400.1.0.tgz
     version: 400.1.0
   - apiVersion: v2
+    appVersion: 4.0.4
+    created: "2023-08-10T10:18:56.113393+02:00"
+    description: Helm Chart for StackRox Central Service
+    digest: ccb5ca6bfbc0eb7a948bd937eca331175d9c493e0974181aff7185fab75bda9e
+    icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
+    name: stackrox-central-services
+    type: application
+    urls:
+    - stackrox-central-services-400.0.4.tgz
+    version: 400.0.4
+  - apiVersion: v2
     appVersion: 4.0.3
-    created: "2023-07-26T08:27:53.588499225Z"
+    created: "2023-08-10T10:18:56.111913+02:00"
     description: Helm Chart for StackRox Central Service
     digest: 8ee22ceea86c50ca1b25e2e5bbdcd0a8abcf20534b03066fcd333ef2b74ba99c
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -47,7 +58,7 @@ entries:
     version: 400.0.3
   - apiVersion: v2
     appVersion: 4.0.2
-    created: "2023-07-26T08:27:53.581090005Z"
+    created: "2023-08-10T10:18:56.110168+02:00"
     description: Helm Chart for StackRox Central Service
     digest: 76b5ef10625e3f33b1502db29336231f30f78a40873311041abfcc6bb0d802ee
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -58,7 +69,7 @@ entries:
     version: 400.0.2
   - apiVersion: v2
     appVersion: 4.0.1
-    created: "2023-07-26T08:27:53.577664942Z"
+    created: "2023-08-10T10:18:56.107211+02:00"
     description: Helm Chart for StackRox Central Service
     digest: 787d0657cb9c47363d1b15a160a1d77117270e46b7cad81b9764985470c168c8
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -69,7 +80,7 @@ entries:
     version: 400.0.1
   - apiVersion: v2
     appVersion: 4.0.0
-    created: "2023-07-26T08:27:53.574857973Z"
+    created: "2023-08-10T10:18:56.105641+02:00"
     description: Helm Chart for StackRox Central Service
     digest: cb79b0e12e89204dbb9e06e981ebb8ed71a23d90104ccc76ecbf9f573a7c1d89
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -80,7 +91,7 @@ entries:
     version: 400.0.0
   - apiVersion: v2
     appVersion: 3.74.5
-    created: "2023-07-26T08:27:53.656148395Z"
+    created: "2023-08-10T10:18:56.156149+02:00"
     description: Helm Chart for StackRox Central Service
     digest: e3f09e301e9becb613e2096c5965de0642467ef3beb2e2d321eb507518cfbbfe
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -91,7 +102,7 @@ entries:
     version: 74.5.0
   - apiVersion: v2
     appVersion: 3.74.4
-    created: "2023-07-26T08:27:53.652586233Z"
+    created: "2023-08-10T10:18:56.153654+02:00"
     description: Helm Chart for StackRox Central Service
     digest: 3c3c962f26bb1afd7d01063348e869352e18380899ba988c9a29d98f507ac0ec
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -102,7 +113,7 @@ entries:
     version: 74.4.0
   - apiVersion: v2
     appVersion: 3.74.3
-    created: "2023-07-26T08:27:53.649701164Z"
+    created: "2023-08-10T10:18:56.151987+02:00"
     description: Helm Chart for StackRox Central Service
     digest: 3480735d019cf9147e39e5eb5e30b26352b57b97ddfea70e18d8cfe525ba4b31
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -113,7 +124,7 @@ entries:
     version: 74.3.0
   - apiVersion: v2
     appVersion: 3.74.2
-    created: "2023-07-26T08:27:53.646873595Z"
+    created: "2023-08-10T10:18:56.150339+02:00"
     description: Helm Chart for StackRox Central Service
     digest: b92aaa2f087c0c8ca06dd49960a55500c1ac711856b4b4aa945a849bdc7d474e
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -124,7 +135,7 @@ entries:
     version: 74.2.0
   - apiVersion: v2
     appVersion: 3.74.1
-    created: "2023-07-26T08:27:53.644015126Z"
+    created: "2023-08-10T10:18:56.148671+02:00"
     description: Helm Chart for StackRox Central Service
     digest: 487b016f61a934d62ccf06650289f109ea96bcdc3ae424aa3740485abadf65ad
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -135,7 +146,7 @@ entries:
     version: 74.1.0
   - apiVersion: v2
     appVersion: 3.74.0
-    created: "2023-07-26T08:27:53.641079457Z"
+    created: "2023-08-10T10:18:56.146991+02:00"
     description: Helm Chart for StackRox Central Service
     digest: 97b02189b39879635556453fcdc1c2707d196b65fa5b0c0098928aa24df8127a
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -146,7 +157,7 @@ entries:
     version: 74.0.0
   - apiVersion: v2
     appVersion: 3.73.5
-    created: "2023-07-26T08:27:53.637695694Z"
+    created: "2023-08-10T10:18:56.144998+02:00"
     description: Helm Chart for StackRox Central Service
     digest: 54bf152552c83b76dedaeac3109bff16ff07ab25bd9c7cb3fcf3eff996dc4a00
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -157,7 +168,7 @@ entries:
     version: 73.5.0
   - apiVersion: v2
     appVersion: 3.73.4
-    created: "2023-07-26T08:27:53.634868924Z"
+    created: "2023-08-10T10:18:56.143309+02:00"
     description: Helm Chart for StackRox Central Service
     digest: 80651037b1be3e7f49eb97fdda3f96b423021187aa1f40eba3307a105390a5cc
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -168,7 +179,7 @@ entries:
     version: 73.4.0
   - apiVersion: v2
     appVersion: 3.73.3
-    created: "2023-07-26T08:27:53.632057955Z"
+    created: "2023-08-10T10:18:56.141577+02:00"
     description: Helm Chart for StackRox Central Service
     digest: 7fc78ddf8b1f8178d788df2d0e7d7c8845fb6190cd0399aa14140c320f541337
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -179,7 +190,7 @@ entries:
     version: 73.3.0
   - apiVersion: v2
     appVersion: 3.73.2
-    created: "2023-07-26T08:27:53.629224885Z"
+    created: "2023-08-10T10:18:56.139933+02:00"
     description: Helm Chart for StackRox Central Service
     digest: 8aa72d09fc9e4625e7429cada53a779e11b6a81fb4902a1c95b697e51165815b
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -190,7 +201,7 @@ entries:
     version: 73.2.0
   - apiVersion: v2
     appVersion: 3.73.1
-    created: "2023-07-26T08:27:53.625853522Z"
+    created: "2023-08-10T10:18:56.137808+02:00"
     description: Helm Chart for StackRox Central Service
     digest: cc929f82add69b661161ebdcd3dae0e007a1c55d6860686db113e7d0cea72cfd
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -201,7 +212,7 @@ entries:
     version: 73.1.0
   - apiVersion: v2
     appVersion: 3.73.0
-    created: "2023-07-26T08:27:53.622981753Z"
+    created: "2023-08-10T10:18:56.136018+02:00"
     description: Helm Chart for StackRox Central Service
     digest: 59c30250551c5fddbdd5f32683b23538e9aad120bcf095d04c943989c56adef0
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -212,7 +223,7 @@ entries:
     version: 73.0.0
   - apiVersion: v2
     appVersion: 3.72.4
-    created: "2023-07-26T08:27:53.620137884Z"
+    created: "2023-08-10T10:18:56.134241+02:00"
     description: Helm Chart for StackRox Central Service
     digest: 33c96fa6d02a45d8f3e189ffbe9fffb54e1979fc84d9d4cc2bfffb06048f8b60
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -223,7 +234,7 @@ entries:
     version: 72.4.0
   - apiVersion: v2
     appVersion: 3.72.3
-    created: "2023-07-26T08:27:53.61767081Z"
+    created: "2023-08-10T10:18:56.132703+02:00"
     description: Helm Chart for StackRox Central Service
     digest: c9056c0972ab0c24c91900a91072528008b6302a8e066bff239e0e78cef2a4c5
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -234,7 +245,7 @@ entries:
     version: 72.3.0
   - apiVersion: v2
     appVersion: 3.72.2
-    created: "2023-07-26T08:27:53.614972439Z"
+    created: "2023-08-10T10:18:56.131076+02:00"
     description: Helm Chart for StackRox Central Service
     digest: 41e069ecf8acd9b6b17399f8e3336e530eac73f0f988387e66d506e40c9486de
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -245,7 +256,7 @@ entries:
     version: 72.2.0
   - apiVersion: v2
     appVersion: 3.72.1
-    created: "2023-07-26T08:27:53.611849773Z"
+    created: "2023-08-10T10:18:56.129453+02:00"
     description: Helm Chart for StackRox Central Service
     digest: dffec915f18f9f0c88f7609ad6fb415e281557bf8695357dc1cecc0b4f1a8936
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -256,7 +267,7 @@ entries:
     version: 72.1.0
   - apiVersion: v2
     appVersion: 3.72.0
-    created: "2023-07-26T08:27:53.6093601Z"
+    created: "2023-08-10T10:18:56.127071+02:00"
     description: Helm Chart for StackRox Central Service
     digest: 8be952be40ef29b13fc95bac4d6dff5b9289d34e32a32497e8465b4c1cce661e
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -267,7 +278,7 @@ entries:
     version: 72.0.0
   - apiVersion: v2
     appVersion: 3.71.3
-    created: "2023-07-26T08:27:53.606882327Z"
+    created: "2023-08-10T10:18:56.125583+02:00"
     description: Helm Chart for StackRox Central Clusters
     digest: df3fca54fb637426e3c895d7356b7dfb95ed64384e005919cfa8de571d48a20d
     icon: https://www.stackrox.com/img/logo.svg
@@ -278,7 +289,7 @@ entries:
     version: 71.3.0
   - apiVersion: v2
     appVersion: 3.71.2
-    created: "2023-07-26T08:27:53.604539552Z"
+    created: "2023-08-10T10:18:56.12425+02:00"
     description: Helm Chart for StackRox Central Clusters
     digest: 7ff76bf8dc53b249ab1d9c61fd203f834777a39346e217e18862cb6b47808204
     icon: https://www.stackrox.com/img/logo.svg
@@ -289,7 +300,7 @@ entries:
     version: 71.2.0
   - apiVersion: v2
     appVersion: 3.71.0
-    created: "2023-07-26T08:27:53.602066179Z"
+    created: "2023-08-10T10:18:56.12285+02:00"
     description: Helm Chart for StackRox Central Clusters
     digest: 22115098ea95e326a08063c0fd5089647d729e58d6d668a9ad22841055f17498
     icon: https://www.stackrox.com/img/logo.svg
@@ -300,7 +311,7 @@ entries:
     version: 71.0.0
   - apiVersion: v2
     appVersion: 3.70.0
-    created: "2023-07-26T08:27:53.598855814Z"
+    created: "2023-08-10T10:18:56.12146+02:00"
     description: Helm Chart for StackRox Central Clusters
     digest: db1c6b84de673bcf72f41b21059b020ad91bd116ddb38772fc0292296e484e5f
     icon: https://www.stackrox.com/img/logo.svg
@@ -312,7 +323,7 @@ entries:
   stackrox-secured-cluster-services:
   - apiVersion: v2
     appVersion: 4.1.2
-    created: "2023-07-26T08:27:53.674990291Z"
+    created: "2023-08-10T10:18:56.169084+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: 9a404831be82ea5ea6567c838b937760227bb1f98978955c4278383810de18e3
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -323,7 +334,7 @@ entries:
     version: 400.1.2
   - apiVersion: v2
     appVersion: 4.1.1
-    created: "2023-07-26T08:27:53.672359119Z"
+    created: "2023-08-10T10:18:56.167321+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: 294d6c05bc0cf4ab89afd38ce6ac16401e7b6ef7b4cc6f41ba276f308a32045f
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -334,7 +345,7 @@ entries:
     version: 400.1.1
   - apiVersion: v2
     appVersion: 4.1.0
-    created: "2023-07-26T08:27:53.669789247Z"
+    created: "2023-08-10T10:18:56.165675+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: faad2e105677d7932514830e3993fa9078b5d7cd0fdcea750ab34d66a6f06979
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -344,8 +355,19 @@ entries:
     - stackrox-secured-cluster-services-400.1.0.tgz
     version: 400.1.0
   - apiVersion: v2
+    appVersion: 4.0.4
+    created: "2023-08-10T10:18:56.164041+02:00"
+    description: Helm Chart for StackRox Secured Clusters
+    digest: 6892758562ae3c3480fce3796570da649515b627fe46fed500a333025f4868a0
+    icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
+    name: stackrox-secured-cluster-services
+    type: application
+    urls:
+    - stackrox-secured-cluster-services-400.0.4.tgz
+    version: 400.0.4
+  - apiVersion: v2
     appVersion: 4.0.3
-    created: "2023-07-26T08:27:53.667195275Z"
+    created: "2023-08-10T10:18:56.162498+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: 407faa33f01752e67a2cfd877f6c0fd3db3800c06a85d37d84fe8394f2f5dc92
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -356,7 +378,7 @@ entries:
     version: 400.0.3
   - apiVersion: v2
     appVersion: 4.0.2
-    created: "2023-07-26T08:27:53.663871211Z"
+    created: "2023-08-10T10:18:56.160961+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: 11a52ce31bb3342a466d315b7d63212d03596b6fb876d47be8a5f89f76290d14
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -367,7 +389,7 @@ entries:
     version: 400.0.2
   - apiVersion: v2
     appVersion: 4.0.1
-    created: "2023-07-26T08:27:53.661285439Z"
+    created: "2023-08-10T10:18:56.159461+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: 1d8e7a056677b9e3f87d3c2abcfd4ab070a39121c57d456864f65d07098fedcd
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -378,7 +400,7 @@ entries:
     version: 400.0.1
   - apiVersion: v2
     appVersion: 4.0.0
-    created: "2023-07-26T08:27:53.658731667Z"
+    created: "2023-08-10T10:18:56.157759+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: e72173415fd130aee22a541a57dad01cb5aaabf041daaeed675ad056313cd2e5
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -389,7 +411,7 @@ entries:
     version: 400.0.0
   - apiVersion: v2
     appVersion: 3.74.5
-    created: "2023-07-26T08:27:53.731311283Z"
+    created: "2023-08-10T10:18:56.202652+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: d631a15c2b56363f4e402bd802fa0f70bcbbde656b1c882562e38b622149556b
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -400,7 +422,7 @@ entries:
     version: 74.5.0
   - apiVersion: v2
     appVersion: 3.74.4
-    created: "2023-07-26T08:27:53.72876291Z"
+    created: "2023-08-10T10:18:56.201173+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: cb1c78c41c1eb13362cf099cfe813b36a728a51c1a4dbc22a32a68692c234034
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -411,7 +433,7 @@ entries:
     version: 74.4.0
   - apiVersion: v2
     appVersion: 3.74.3
-    created: "2023-07-26T08:27:53.725661744Z"
+    created: "2023-08-10T10:18:56.199674+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: 50ab858bf9b559e435b8ff47fedd993060953d51b7a9750a0fa71385df3260d5
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -422,7 +444,7 @@ entries:
     version: 74.3.0
   - apiVersion: v2
     appVersion: 3.74.2
-    created: "2023-07-26T08:27:53.723125371Z"
+    created: "2023-08-10T10:18:56.198127+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: 295d7b22550ac2d8042c29a3bf601db764183b4666f65739d3ad3d9764bdca80
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -433,7 +455,7 @@ entries:
     version: 74.2.0
   - apiVersion: v2
     appVersion: 3.74.1
-    created: "2023-07-26T08:27:53.720573799Z"
+    created: "2023-08-10T10:18:56.196071+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: 46d92c2b85c4b1ce2cd6b23c9890c00e039502626f42982c66f80cd39819d41a
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -444,7 +466,7 @@ entries:
     version: 74.1.0
   - apiVersion: v2
     appVersion: 3.74.0
-    created: "2023-07-26T08:27:53.718012826Z"
+    created: "2023-08-10T10:18:56.194628+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: b16de939fd234fbd62b3966e2ba0794d5e11e6dd5f782856f4562b0da42eb675
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -455,7 +477,7 @@ entries:
     version: 74.0.0
   - apiVersion: v2
     appVersion: 3.73.5
-    created: "2023-07-26T08:27:53.715117358Z"
+    created: "2023-08-10T10:18:56.19314+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: 05669d6da11df97070af8c402a2cd68a1052ed7457dfe5b5fdd729b30d1c6e3a
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -466,7 +488,7 @@ entries:
     version: 73.5.0
   - apiVersion: v2
     appVersion: 3.73.4
-    created: "2023-07-26T08:27:53.712026591Z"
+    created: "2023-08-10T10:18:56.19142+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: da6ba1c98c51d7238ea44395f1bce8844b7276f932a26580d2e8bdb555c90e03
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -477,7 +499,7 @@ entries:
     version: 73.4.0
   - apiVersion: v2
     appVersion: 3.73.3
-    created: "2023-07-26T08:27:53.709465819Z"
+    created: "2023-08-10T10:18:56.189912+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: 5b50f8880babbdacf1e3e85faa5e23ebc37e80e3c29bbf1e83b75227c7b045e9
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -488,7 +510,7 @@ entries:
     version: 73.3.0
   - apiVersion: v2
     appVersion: 3.73.2
-    created: "2023-07-26T08:27:53.706930646Z"
+    created: "2023-08-10T10:18:56.188061+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: ab4e152523ac791491f832c90b92218597431594953fcf9fda8235aa9bb2c3ce
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -499,7 +521,7 @@ entries:
     version: 73.2.0
   - apiVersion: v2
     appVersion: 3.73.1
-    created: "2023-07-26T08:27:53.704368674Z"
+    created: "2023-08-10T10:18:56.186593+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: 2dc578c3c905b996339b8d5f2f80428c03501a9c9699516dbf12ed11e2091750
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -510,7 +532,7 @@ entries:
     version: 73.1.0
   - apiVersion: v2
     appVersion: 3.73.0
-    created: "2023-07-26T08:27:53.701584104Z"
+    created: "2023-08-10T10:18:56.185122+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: 93e3298b3ee1f96db92b6e23a65591d7a9cb1bffa7871177187815599c8d021a
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -521,7 +543,7 @@ entries:
     version: 73.0.0
   - apiVersion: v2
     appVersion: 3.72.4
-    created: "2023-07-26T08:27:53.698834833Z"
+    created: "2023-08-10T10:18:56.183635+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: e127489a3df22bf5bebbb56cbd6ccc8e9d1f56994cb077be045ca5bbbc1698f4
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -532,7 +554,7 @@ entries:
     version: 72.4.0
   - apiVersion: v2
     appVersion: 3.72.3
-    created: "2023-07-26T08:27:53.696302261Z"
+    created: "2023-08-10T10:18:56.182105+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: dfbd93015a9a8021d53390907dd9e209ca0ded07065cb032e05554eb2a2130ad
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -543,7 +565,7 @@ entries:
     version: 72.3.0
   - apiVersion: v2
     appVersion: 3.72.2
-    created: "2023-07-26T08:27:53.693722889Z"
+    created: "2023-08-10T10:18:56.180083+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: 105e5d5d4318153130d39ca7f65e54a0cdd4d7c56651af3a2da324287f7f412b
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -554,7 +576,7 @@ entries:
     version: 72.2.0
   - apiVersion: v2
     appVersion: 3.72.1
-    created: "2023-07-26T08:27:53.691163916Z"
+    created: "2023-08-10T10:18:56.178359+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: b7d6a675beef0e81bb78e8fbc15b12d9e6182f45918e6a4e9fd8833c6cd8b03e
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -565,7 +587,7 @@ entries:
     version: 72.1.0
   - apiVersion: v2
     appVersion: 3.72.0
-    created: "2023-07-26T08:27:53.68800565Z"
+    created: "2023-08-10T10:18:56.176879+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: 099a3eb3a13c5fc7607d654b0bde4934c6cc5cd8c1c473a3cb64dbf75c540368
     icon: https://raw.githubusercontent.com/stackrox/stackrox/master/image/templates/helm/shared/assets/StackRox_icon.png
@@ -576,7 +598,7 @@ entries:
     version: 72.0.0
   - apiVersion: v2
     appVersion: 3.71.3
-    created: "2023-07-26T08:27:53.685445978Z"
+    created: "2023-08-10T10:18:56.175415+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: f05b85662ed91d727ea7ebea0219be5ef0d80e657d69f40b961d5166c88d6292
     icon: https://www.stackrox.com/img/logo.svg
@@ -587,7 +609,7 @@ entries:
     version: 71.3.0
   - apiVersion: v2
     appVersion: 3.71.2
-    created: "2023-07-26T08:27:53.683015404Z"
+    created: "2023-08-10T10:18:56.173982+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: 7624e7c16f5f22aaa34ffac654606fb974813f895f312cd1fbd6c103959e9ad0
     icon: https://www.stackrox.com/img/logo.svg
@@ -598,7 +620,7 @@ entries:
     version: 71.2.0
   - apiVersion: v2
     appVersion: 3.71.0
-    created: "2023-07-26T08:27:53.680562731Z"
+    created: "2023-08-10T10:18:56.172227+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: eb8decbde7b849b7b21357c0b2812b404b6c08f69e97d2a57478a413223f21e3
     icon: https://www.stackrox.com/img/logo.svg
@@ -609,7 +631,7 @@ entries:
     version: 71.0.0
   - apiVersion: v2
     appVersion: 3.70.0
-    created: "2023-07-26T08:27:53.677769961Z"
+    created: "2023-08-10T10:18:56.170809+02:00"
     description: Helm Chart for StackRox Secured Clusters
     digest: e6ef2cdc20620fab37e0cfd6b5a5646c83e5b1360bd0a7eddd835f5824c16c8a
     icon: https://www.stackrox.com/img/logo.svg
@@ -618,4 +640,4 @@ entries:
     urls:
     - stackrox-secured-cluster-services-70.0.0.tgz
     version: 70.0.0
-generated: "2023-07-26T08:27:53.571958404Z"
+generated: "2023-08-10T10:18:56.103366+02:00"
