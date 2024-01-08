@@ -1,0 +1,175 @@
+defaults:
+
+  imagePullSecrets:
+    allowNone: false
+    useExisting: []
+    useFromDefaultServiceAccount: true
+
+  image:
+    registry: stackrox.io
+
+  env:
+    offlineMode: false
+
+  central:
+    config: "@config/central/config.yaml|config/central/config.yaml.default"
+    endpointsConfig: "@config/central/endpoints.yaml|config/central/endpoints.yaml.default"
+
+    exposeMonitoring: false
+
+    affinity:
+      nodeAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+        # Central is single-homed, so avoid preemptible nodes.
+        - weight: 100
+          preference:
+            matchExpressions:
+            - key: cloud.google.com/gke-preemptible
+              operator: NotIn
+              values:
+                - "true"
+        - weight: 50
+          preference:
+            matchExpressions:
+            - key: node-role.kubernetes.io/infra
+              operator: Exists
+        - weight: 25
+          preference:
+            matchExpressions:
+            - key: node-role.kubernetes.io/compute
+              operator: Exists
+        # From v1.20 node-role.kubernetes.io/control-plane replaces node-role.kubernetes.io/master (removed in
+        # v1.25). We apply both because our goal is not to run pods on control plane nodes for any version of k8s.
+        - weight: 100
+          preference:
+            matchExpressions:
+            - key: node-role.kubernetes.io/master
+              operator: DoesNotExist
+        - weight: 100
+          preference:
+            matchExpressions:
+            - key: node-role.kubernetes.io/control-plane
+              operator: DoesNotExist
+
+    image:
+      name: main
+      tag: 4.3.2
+
+    resources:
+      requests:
+        memory: "4Gi"
+        cpu: "1500m"
+      limits:
+        memory: "8Gi"
+        cpu: "4000m"
+
+    exposure:
+      loadBalancer:
+        enabled: false
+        port: 443
+      nodePort:
+        enabled: false
+        port: null
+      route:
+        enabled: false
+    db:
+      external: false
+
+      source:
+        minConns: 10
+        maxConns: 90
+        statementTimeoutMs: 1200000
+
+      postgresConfig: "@config/centraldb/postgresql.conf|config/centraldb/postgresql.conf.default"
+      hbaConfig: "@config/centraldb/pg_hba.conf|config/centraldb/pg_hba.conf.default"
+
+      image:
+        name: central-db
+        tag: 4.3.2
+
+      resources:
+        requests:
+          memory: "8Gi"
+          cpu: "4"
+        limits:
+          memory: "16Gi"
+          cpu: "8"
+  scanner:
+    disable: false
+    replicas: 3
+    logLevel: INFO
+    mode: full
+
+    autoscaling:
+      disable: false
+      minReplicas: 2
+      maxReplicas: 5
+
+    affinity:
+      podAntiAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 100
+          podAffinityTerm:
+            labelSelector:
+              matchLabels:
+                app: scanner
+            topologyKey: kubernetes.io/hostname
+      nodeAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 50
+          preference:
+            matchExpressions:
+              - key: node-role.kubernetes.io/infra
+                operator: Exists
+        - weight: 25
+          preference:
+            matchExpressions:
+              - key: node-role.kubernetes.io/compute
+                operator: Exists
+        # From v1.20 node-role.kubernetes.io/control-plane replaces node-role.kubernetes.io/master (removed in
+        # v1.25). We apply both because our goal is not to run pods on control plane nodes for any version of k8s.
+        - weight: 100
+          preference:
+            matchExpressions:
+              - key: node-role.kubernetes.io/master
+                operator: DoesNotExist
+        - weight: 100
+          preference:
+            matchExpressions:
+              - key: node-role.kubernetes.io/control-plane
+                operator: DoesNotExist
+
+    resources:
+      requests:
+        memory: "1500Mi"
+        cpu: "1000m"
+      limits:
+        memory: "4Gi"
+        cpu: "2000m"
+
+    image:
+      name: scanner
+      tag: 4.3.2
+
+    dbResources:
+      limits:
+        cpu: "2000m"
+        memory: "4Gi"
+      requests:
+        cpu: "200m"
+        memory: "200Mi"
+
+    dbImage:
+      name: scanner-db
+      tag: 4.3.2
+
+  system:
+    createSCCs: true
+
+pvcDefaults:
+  claimName: "stackrox-db"
+  size: "100Gi"
+
+dbPVCDefaults:
+  claimName: "central-db"
+  size: "100Gi"
