@@ -2,13 +2,13 @@ name: Update repository's main README file
 
 on:
   push:
-    branches: [main]
+    branches: [main, gavin/ROX-21045/switch-bot]
 
 jobs:
   README_UPDATE:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
       - name: Updating README
@@ -24,10 +24,10 @@ jobs:
           if git diff --quiet HEAD; then
             echo "No updates."
             # Keep master in sync with main
-            git push origin HEAD:master
+            git push origin HEAD:gavin/ROX-21045/switch-bot
           else
             echo "Updated README and latest symlink"
-            git config --global user.name '${{ vars.RHACS_BOT_GITHUB_TOKEN }}'
+            git config --global user.name '${{ vars.RHACS_BOT_GITHUB_USERNAME }}'
             git config --global user.email '${{ vars.RHACS_BOT_GITHUB_EMAIL }}'
             git remote set-url origin https://x-access-token:${{ secrets.RHACS_BOT_GITHUB_TOKEN }}@github.com/"$GITHUB_REPOSITORY"
             msg="Updated latest version reference to ${LATEST_VERSION}"
@@ -37,8 +37,8 @@ jobs:
               exit 1
             fi
             git commit -am "$msg 🤖"
-            git push origin HEAD:main
+            git push origin HEAD:gavin/ROX-21045/switch-bot
             # Keep master in sync with main
-            git push origin HEAD:master
+            git push origin HEAD:gavin/ROX-21045/switch-bot
           fi
           echo "✓ Done"
