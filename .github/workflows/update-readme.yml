@@ -8,7 +8,7 @@ jobs:
   README_UPDATE:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
       - name: Updating README
@@ -27,9 +27,9 @@ jobs:
             git push origin HEAD:master
           else
             echo "Updated README and latest symlink"
-            git config --global user.name 'roxbot'
-            git config --global user.email 'roxbot@users.noreply.github.com'
-            git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/"$GITHUB_REPOSITORY"
+            git config --global user.name '${{ vars.RHACS_BOT_GITHUB_USERNAME }}'
+            git config --global user.email '${{ vars.RHACS_BOT_GITHUB_EMAIL }}'
+            git remote set-url origin https://x-access-token:${{ secrets.RHACS_BOT_GITHUB_TOKEN }}@github.com/"$GITHUB_REPOSITORY"
             msg="Updated latest version reference to ${LATEST_VERSION}"
             if grep -q "$msg" < <(git log -n 1 --pretty='format:%s'); then
               echo "Latest version update already exists, but still changes detected!"
