@@ -21,10 +21,10 @@ Afterwards, you can update, download, and install the available charts. For exam
 ## Installation
 
 For instructions on how to install the StackRox Kubernetes Security Platform with these Helm charts,
-see [Quick Start (Helm)](https://github.com/stackrox/stackrox#quick-installation-via-helm).
+see [Quick Start (Helm)](https://github.com/stackrox/stackrox#quick-installation-using-helm).
 
 
-To install ACS, follow the [OpenShift docs Helm quick Install Guide](https://docs.openshift.com/acs/installing/installing_helm/install-helm-quick.html).
+To install ACS, follow the [OpenShift docs Helm quick Install Guide](https://docs.openshift.com/acs/installing/installing_other/install-central-other.html#install-using-helm-no-customizations-other).
 
 ## Included charts
 
@@ -38,7 +38,7 @@ The StackRox Kubernetes Security Platform Helm charts repository includes the fo
 The Helm chart to install StackRox Central is called `stackrox-central-services`.
 
 The installation can be customized to your needs. Please consult the documentation at OpenShift docs for detailed configuration options:  
-[Configure the central-services Helm chart](https://docs.openshift.com/acs/installing/installing_helm/install-helm-customization.html#configure-central-services-helm-chart)
+[Configure the central-services Helm chart](https://docs.openshift.com/acs/installing/installing_other/install-central-other.html#install-using-helm-customizations-other)
 
 ### Secured cluster services chart
 
@@ -46,7 +46,7 @@ The chart to install per-cluster and per-node components of StackRox is called `
 
 The installation can be customized to your needs. Consult the OpenShift docs for detailed configuration options:  
 [Configuring the secured-cluster-services Helm chart
-](https://docs.openshift.com/acs/installing/installing_helm/install-helm-customization.html#configure-secured-cluster-services-helm-chart)
+](https://docs.openshift.com/acs/installing/installing_other/install-secured-cluster-other.html#configure-secured-cluster-services-helm-chart-customizations-other)
 
 
 ## License
