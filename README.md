@@ -14,7 +14,7 @@ $ helm repo add stackrox https://raw.githubusercontent.com/stackrox/helm-charts/
 Afterwards, you can update, download, and install the available charts. For example:
 
 - Use the `helm repo update` command to get the latest version of the charts.
-- Use the `helm install stackrox/stackrox-central-services` command to install the `central-services` chart.
+- Use the `helm install stackrox-central-services stackrox/stackrox-central-services` command to install the `central-services` chart.
 - Use the `helm pull stackrox/stackrox-secured-cluster-services` command to download the `secured-cluster-services` chart.
 
 
