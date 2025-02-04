@@ -1,4 +1,4 @@
-[![Latest version: 4.6.1](https://img.shields.io/badge/Latest%20version-4.6.1-green.svg)][Latest version]
+[![Latest version: 3.0.55.0](https://img.shields.io/badge/Latest%20version-3.0.55.0-green.svg)][Latest version]
 
 # Helm charts for the StackRox Kubernetes Security Platform
 
@@ -14,7 +14,7 @@ $ helm repo add stackrox https://raw.githubusercontent.com/stackrox/helm-charts/
 Afterwards, you can update, download, and install the available charts. For example:
 
 - Use the `helm repo update` command to get the latest version of the charts.
-- Use the `helm install stackrox-central-services stackrox/stackrox-central-services` command to install the `central-services` chart.
+- Use the `helm install stackrox/stackrox-central-services` command to install the `central-services` chart.
 - Use the `helm pull stackrox/stackrox-secured-cluster-services` command to download the `secured-cluster-services` chart.
 
 
@@ -55,4 +55,4 @@ Helm charts for the [StackRox Kubernetes Security Platform](https://www.stackrox
 licensed under [Apache License 2.0](./LICENSE).
 
 
-[Latest version]: ./4.6.1/
+[Latest version]: ./3.0.55.0/
