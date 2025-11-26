@@ -1,0 +1,105 @@
+# This file contains basic configuration options for all services
+
+centralEndpoint: "central.{{ required "unknown namespace" ._rox._namespace }}.svc:443"
+createUpgraderServiceAccount: false
+
+{{- if .Release.IsInstall }}
+createSecrets: true
+{{- end }}
+
+exposeMonitoring: false
+
+helmManaged: true
+
+
+managedBy: MANAGER_TYPE_HELM_CHART
+
+
+clusterName: ""
+confirmNewClusterName: ""
+
+imagePullSecrets:
+  allowNone: true
+  useExisting: []
+  useFromDefaultServiceAccount: true
+
+sensor:
+  endpoint: "sensor.{{ required "unknown namespace" ._rox._namespace }}.svc:443"
+  affinity:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+        # Sensor is single-homed, so avoid preemptible nodes.
+        - weight: 100
+          preference:
+            matchExpressions:
+              - key: cloud.google.com/gke-preemptible
+                operator: NotIn
+                values:
+                - "true"
+        - weight: 50
+          preference:
+            matchExpressions:
+            - key: node-role.kubernetes.io/infra
+              operator: Exists
+        - weight: 25
+          preference:
+            matchExpressions:
+            - key: node-role.kubernetes.io/compute
+              operator: Exists
+        - weight: 100
+          preference:
+            matchExpressions:
+            - key: node-role.kubernetes.io/control-plane
+              operator: DoesNotExist
+
+admissionControl:
+  listenOnCreates: false
+  listenOnUpdates: false
+  listenOnEvents: {{ not ._rox.env.openshift }}
+  dynamic:
+    enforceOnCreates: false
+    scanInline: false
+    disableBypass: false
+    timeout: 10
+    enforceOnUpdates: false
+  replicas: 3
+  failurePolicy: Ignore
+
+  affinity:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 50
+          preference:
+            matchExpressions:
+            - key: node-role.kubernetes.io/control-plane
+              operator: Exists
+    podAntiAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 60
+          podAffinityTerm:
+            topologyKey: "kubernetes.io/hostname"
+            labelSelector:
+              matchLabels:
+                app: admission-control
+
+collector:
+  collectionMethod: "CORE_BPF"
+  disableTaintTolerations: false
+  nodescanningEndpoint: "127.0.0.1:8444"
+  tolerations:
+  - operator: "Exists"
+
+auditLogs:
+  disableCollection: {{ ne ._rox.env.openshift 4 }}
+
+network:
+  enableNetworkPolicies: true
+
+enableOpenShiftMonitoring: false
+---
+sensor:
+  exposeMonitoring: {{ ._rox.exposeMonitoring }}
+collector:
+  exposeMonitoring: {{ ._rox.exposeMonitoring }}
+admissionControl:
+  exposeMonitoring: {{ ._rox.exposeMonitoring }}
