@@ -5,6 +5,11 @@
 This repository contains Helm charts for the [StackRox Kubernetes Security
 Platform](https://www.stackrox.io/) as well as [Red Hat Advanced Cluster Security](https://www.redhat.com/en/technologies/cloud-computing/openshift/advanced-cluster-security-kubernetes) (ACS). StackRox is the Open Source upstream project of ACS. 
 
+This repository is a public mirror of [stackrox/release-artifacts](https://github.com/stackrox/release-artifacts/). 
+Modifications can only be done by ACS engineers in the source repository.
+If you encounter any problems, open an issue in the [stackrox/stackrox](https://github.com/stackrox/stackrox/issues) repository.
+
+## Adding the Helm repository
 
 To use the StackRox charts, add https://raw.githubusercontent.com/stackrox/helm-charts/main/opensource/ as a repository:
 ```bash
@@ -16,7 +21,6 @@ Afterwards, you can update, download, and install the available charts. For exam
 - Use the `helm repo update` command to get the latest version of the charts.
 - Use the `helm install stackrox-central-services stackrox/stackrox-central-services` command to install the `central-services` chart.
 - Use the `helm pull stackrox/stackrox-secured-cluster-services` command to download the `secured-cluster-services` chart.
-
 
 ## Installation
 
