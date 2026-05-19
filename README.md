@@ -1,4 +1,4 @@
-[![Latest version: 4.10.2](https://img.shields.io/badge/Latest%20version-4.10.2-green.svg)][Latest version]
+[![Latest version: 3.0.55.0](https://img.shields.io/badge/Latest%20version-3.0.55.0-green.svg)][Latest version]
 
 # Helm charts for the StackRox Kubernetes Security Platform
 
@@ -14,17 +14,17 @@ $ helm repo add stackrox https://raw.githubusercontent.com/stackrox/helm-charts/
 Afterwards, you can update, download, and install the available charts. For example:
 
 - Use the `helm repo update` command to get the latest version of the charts.
-- Use the `helm install stackrox/stackrox-central-services` command to install the `central-services` chart.
+- Use the `helm install stackrox-central-services stackrox/stackrox-central-services` command to install the `central-services` chart.
 - Use the `helm pull stackrox/stackrox-secured-cluster-services` command to download the `secured-cluster-services` chart.
 
 
 ## Installation
 
 For instructions on how to install the StackRox Kubernetes Security Platform with these Helm charts,
-see [Quick Start (Helm)](https://github.com/stackrox/stackrox#quick-installation-via-helm).
+see [Quick Start (Helm)](https://github.com/stackrox/stackrox#quick-installation-using-helm).
 
 
-To install ACS, follow the [OpenShift docs Helm quick Install Guide](https://docs.openshift.com/acs/installing/installing_helm/install-helm-quick.html).
+To install ACS, follow the [OpenShift docs Helm quick Install Guide](https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_security_for_kubernetes/4.10/html/installing/installing-rhacs-on-other-platforms#install-using-helm-no-customizations-other).
 
 ## Included charts
 
@@ -38,7 +38,7 @@ The StackRox Kubernetes Security Platform Helm charts repository includes the fo
 The Helm chart to install StackRox Central is called `stackrox-central-services`.
 
 The installation can be customized to your needs. Please consult the documentation at OpenShift docs for detailed configuration options:  
-[Configure the central-services Helm chart](https://docs.openshift.com/acs/installing/installing_helm/install-helm-customization.html#configure-central-services-helm-chart)
+[Configure the central-services Helm chart](https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_security_for_kubernetes/4.10/html/installing/installing-rhacs-on-other-platforms#install-using-helm-customizations-other)
 
 ### Secured cluster services chart
 
@@ -46,13 +46,13 @@ The chart to install per-cluster and per-node components of StackRox is called `
 
 The installation can be customized to your needs. Consult the OpenShift docs for detailed configuration options:  
 [Configuring the secured-cluster-services Helm chart
-](https://docs.openshift.com/acs/installing/installing_helm/install-helm-customization.html#configure-secured-cluster-services-helm-chart)
+](https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_security_for_kubernetes/4.10/html/installing/installing-rhacs-on-other-platforms#configure-secured-cluster-services-helm-chart-customizations-other_install-secured-cluster-other)
 
 
 ## License
 
-Helm charts for the [StackRox Kubernetes Security Platform](https://www.stackrox.com/platform/) are
+Helm charts for the [StackRox Kubernetes Security Platform](https://www.redhat.com/en/technologies/cloud-computing/openshift/advanced-cluster-security-kubernetes) are
 licensed under [Apache License 2.0](./LICENSE).
 
 
-[Latest version]: ./4.10.2/
+[Latest version]: ./3.0.55.0/
