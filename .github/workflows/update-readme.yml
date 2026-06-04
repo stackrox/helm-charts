@@ -8,14 +8,15 @@ jobs:
   README_UPDATE:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           ref: ${{ github.head_ref }}
           # Fetching all branches here to get main and master.
           fetch-depth: 0
+          token: ${{ secrets.RHACS_BOT_GITHUB_TOKEN }}
       - name: Updating README
+        shell: bash
         run: |
-          SHELL=/bin/bash
           LATEST_VERSION="$(ls | grep -E '^[0-9]+(\.[0-9]+)*$' | sort --version-sort | tail -n 1)"
           echo "LATEST VERSION is $LATEST_VERSION"
           sed -i.bak -E 's@(Latest version: |Latest%20version-|\[Latest version\]: \./)[0-9]+(\.[0-9]+)*@\1'"$LATEST_VERSION"'@g' README.md
@@ -31,7 +32,6 @@ jobs:
             echo "Updated README and latest symlink"
             git config --global user.name '${{ vars.RHACS_BOT_GITHUB_USERNAME }}'
             git config --global user.email '${{ vars.RHACS_BOT_GITHUB_EMAIL }}'
-            git remote set-url origin https://x-access-token:${{ secrets.RHACS_BOT_GITHUB_TOKEN }}@github.com/"$GITHUB_REPOSITORY"
             msg="Updated latest version reference to ${LATEST_VERSION}"
             if grep -q "$msg" < <(git log -n 1 --pretty='format:%s'); then
               echo "Latest version update already exists, but still changes detected!"
