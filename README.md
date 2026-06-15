@@ -1,10 +1,15 @@
-[![Latest version: 4.11.0](https://img.shields.io/badge/Latest%20version-4.11.0-green.svg)][Latest version]
+[![Latest version: 4.10.2](https://img.shields.io/badge/Latest%20version-4.10.2-green.svg)][Latest version]
 
 # Helm charts for the StackRox Kubernetes Security Platform
 
 This repository contains Helm charts for the [StackRox Kubernetes Security
 Platform](https://www.stackrox.io/) as well as [Red Hat Advanced Cluster Security](https://www.redhat.com/en/technologies/cloud-computing/openshift/advanced-cluster-security-kubernetes) (ACS). StackRox is the Open Source upstream project of ACS.
 
+This repository is a public mirror of [stackrox/release-artifacts](https://github.com/stackrox/release-artifacts/). 
+Modifications can only be done by ACS engineers in the source repository.
+If you encounter any problems, open an issue in the [stackrox/stackrox](https://github.com/stackrox/stackrox/issues) repository.
+
+## Adding the Helm repository
 
 To use the StackRox charts, add https://raw.githubusercontent.com/stackrox/helm-charts/main/opensource/ as a repository:
 ```bash
@@ -15,7 +20,6 @@ Afterwards, you can update, download, and install the available charts. For exam
 
 - Use the `helm repo update` command to get the latest version of the charts.
 - Use the `helm install --wait --namespace stackrox-operator-system --create-namespace stackrox-operator stackrox/stackrox-operator` command to install the `stackrox-operator` chart.
-
 
 ## Installation
 
@@ -65,5 +69,4 @@ The installation can be customized to your needs. Consult the OpenShift docs for
 Helm charts for the [StackRox Kubernetes Security Platform](https://www.redhat.com/en/technologies/cloud-computing/openshift/advanced-cluster-security-kubernetes) are
 licensed under [Apache License 2.0](./LICENSE).
 
-
-[Latest version]: ./4.11.0/
+[Latest version]: ./4.10.2/
