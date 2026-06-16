@@ -19,7 +19,7 @@ manager:
     repository: registry.redhat.io/advanced-cluster-security/rhacs-rhel9-operator
     ## Image tag (defaults to Chart.appVersion if not set)
     ##
-    tag: "4.11.0-0-g749f333df0"
+    tag: "4.11.0"
     pullPolicy: IfNotPresent
 
   ## Arguments

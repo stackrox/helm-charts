@@ -1303,7 +1303,7 @@ entries:
   - annotations:
       kubebuilder.io/generated-by: kubebuilder
     apiVersion: v2
-    appVersion: 4.11.0-0-g749f333df0
+    appVersion: 4.11.0
     created: "2026-06-12T14:24:29.696033628Z"
     description: A Helm chart to distribute stackrox-operator
     digest: 8179b24f83a2c4f36079465f83901efd5d3ec29f746b035f0b92794db20cb1a3
@@ -1313,8 +1313,8 @@ entries:
     name: stackrox-operator
     type: application
     urls:
-    - stackrox-operator-4.11.0-0-g749f333df0.tgz
-    version: 4.11.0-0-g749f333df0
+    - stackrox-operator-4.11.0.tgz
+    version: 4.11.0
   stackrox-secured-cluster-services:
   - apiVersion: v2
     appVersion: 4.11.0
