@@ -1,4 +1,4 @@
-[![Latest version: 4.11.0](https://img.shields.io/badge/Latest%20version-4.11.0-green.svg)][Latest version]
+[![Latest version: 4.10.2](https://img.shields.io/badge/Latest%20version-4.10.2-green.svg)][Latest version]
 
 # Helm charts for the StackRox Kubernetes Security Platform
 
@@ -69,4 +69,4 @@ The installation can be customized to your needs. Consult the OpenShift docs for
 Helm charts for the [StackRox Kubernetes Security Platform](https://www.redhat.com/en/technologies/cloud-computing/openshift/advanced-cluster-security-kubernetes) are
 licensed under [Apache License 2.0](./LICENSE).
 
-[Latest version]: ./4.11.0/
+[Latest version]: ./4.10.2/
