@@ -1,0 +1,14 @@
+apiVersion: v2
+name: stackrox-operator
+description: A Helm chart to distribute stackrox-operator
+type: application
+
+version: 4.11.3
+appVersion: "4.11.3"
+
+keywords:
+  - kubernetes
+  - operator
+
+annotations:
+  kubebuilder.io/generated-by: kubebuilder
