@@ -1,0 +1,34 @@
+{{- include "srox.init" . -}}
+{{- if ._rox.scannerV4._indexerEnabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: scanner-v4-indexer
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "srox.labels" (list . "service" "scanner-v4-indexer") | nindent 4 }}
+  annotations:
+    {{- include "srox.annotations" (list . "service" "scanner-v4-indexer") | nindent 4 }}
+    {{- if ._rox.monitoring.openshift.enabled }}
+    service.beta.openshift.io/serving-cert-secret-name: scanner-v4-indexer-monitoring-tls
+    {{- end }}
+spec:
+  selector:
+    app: scanner-v4-indexer
+  clusterIP: None
+  ports:
+  - name: grpc-scanner-v4-indexer
+    port: 8443
+    targetPort: grpc
+  {{- if ._rox.scannerV4.exposeMonitoring }}
+  - name: monitoring
+    port: {{ ._rox.scannerV4.indexer.metricsPort }}
+    targetPort: monitoring
+  {{- end }}
+  {{- if ._rox.monitoring.openshift.enabled }}
+  - name: indexer-monitoring-tls
+    port: 9091
+    targetPort: monitoring-tls
+  {{- end }}
+
+{{- end }}

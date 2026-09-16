@@ -1,0 +1,37 @@
+{{/*
+  srox._labels $ $labels $extraLabels $objType $objName $forPod
+
+  Writes all applicable [pod] labels (including default labels) for $objType/$objName
+  into $labels. Pod labels are written iff $forPod is true.
+  The dict $extraLabels can be used for specifying additional labels which
+  can be modified by the user using `customize` entries before before they are added to $labels.
+   */}}
+{{ define "srox._labels" }}
+{{ $ := index . 0  }}
+{{ $labels := index . 1 }}
+{{ $extraLabels := index . 2 }}
+{{ $objType := index . 3 }}
+{{ $objName := index . 4 }}
+{{ $forPod := index . 5 }}
+{{ $_ := set $labels "app.kubernetes.io/name" "stackrox" }}
+{{ $_ = set $labels "app.kubernetes.io/managed-by" $.Release.Service }}
+{{ $chartLabel := printf "%s-%s" $.Chart.Name ($.Chart.Version | replace "+" "_") }}
+{{ if gt (len $chartLabel) 63 }}
+  {{ $chartLabel = trunc 63 $chartLabel }}
+  {{/* Ensure label ends with alphanumeric character */}}
+  {{ $chartLabel = regexReplaceAll "[^a-zA-Z0-9]+$" $chartLabel "" }}
+{{ end }}
+{{ $_ = set $labels "helm.sh/chart" $chartLabel }}
+{{ $_ = set $labels "app.kubernetes.io/instance" $.Release.Name }}
+{{ $_ = set $labels "app.kubernetes.io/version" $.Chart.AppVersion }}
+{{ $_ = set $labels "app.kubernetes.io/part-of" "stackrox-central-services" }}
+{{ $component := regexReplaceAll "^.*/\\d{2}-([a-z0-9-]+)-\\d{2}-[^/]+\\.yaml" $.Template.Name "${1}" }}
+{{ if not (contains "/" $component) }}
+  {{ $_ = set $labels "app.kubernetes.io/component" $component }}
+{{ end }}
+{{ $metadataNames := list "labels" }}
+{{ if $forPod }}
+  {{ $metadataNames = append $metadataNames "podLabels" }}
+{{ end }}
+{{ include "srox._customizeMetadata" (list $ $labels $extraLabels $objType $objName $metadataNames) }}
+{{ end }}
