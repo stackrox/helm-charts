@@ -1,4 +1,4 @@
-[![Latest version: 5.0.0](https://img.shields.io/badge/Latest%20version-5.0.0-green.svg)][Latest version]
+[![Latest version: 4.10.2](https://img.shields.io/badge/Latest%20version-4.10.2-green.svg)][Latest version]
 
 # Helm charts for the StackRox Kubernetes Security Platform
 
@@ -31,8 +31,8 @@ see [operator/install](https://github.com/stackrox/stackrox/tree/master/operator
 The StackRox Kubernetes Security Platform Helm charts repository includes the following charts:
 
 1. [`stackrox-operator`](#operator-chart) - installs the StackRox operator (available since 4.11)
-2. [`central-services`](#central-services-chart) (deprecated)
-3. [`secured-cluster-services`](#secured-cluster-services-chart) (deprecated)
+2. [`central-services`](#central-services-chart) (obsolete, no longer provided for 5.1+)
+3. [`secured-cluster-services`](#secured-cluster-services-chart) (obsolete, no longer provided for 5.1+)
 
 ### Operator chart
 
@@ -40,22 +40,22 @@ The recommended way to install the StackRox Kubernetes Security Platform via Hel
 `stackrox-operator` chart. This chart installs the StackRox operator, which manages the platform
 components via `Central` and `SecuredCluster` custom resources.
 
-### Central services chart (deprecated)
+### Central services chart (obsolete)
 
 > [!WARNING]
-> The `stackrox-central-services` chart is deprecated and will cease to be updated
-> in the future. Use the [`stackrox-operator`](#operator-chart) chart instead.
+> The `stackrox-central-services` chart is obsolete and not shipped
+> for release 5.1 or later. Use the [`stackrox-operator`](#operator-chart) chart instead.
 
 The Helm chart to install StackRox Central is called `stackrox-central-services`.
 
 The installation can be customized to your needs. Please consult the documentation at OpenShift docs for detailed configuration options:  
 [Configure the central-services Helm chart](https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_security_for_kubernetes/4.10/html/installing/installing-rhacs-on-other-platforms#install-using-helm-customizations-other)
 
-### Secured cluster services chart (deprecated)
+### Secured cluster services chart (obsolete)
 
 > [!WARNING]
-> The `stackrox-secured-cluster-services` chart is deprecated and will cease to be
-> updated in the future. Use the [`stackrox-operator`](#operator-chart) chart instead.
+> The `stackrox-secured-cluster-services` chart is obsolete and not shipped
+> for release 5.1 or later. Use the [`stackrox-operator`](#operator-chart) chart instead.
 
 The chart to install per-cluster and per-node components of StackRox is called `stackrox-secured-cluster-services`.
 
@@ -69,4 +69,4 @@ The installation can be customized to your needs. Consult the OpenShift docs for
 Helm charts for the [StackRox Kubernetes Security Platform](https://www.redhat.com/en/technologies/cloud-computing/openshift/advanced-cluster-security-kubernetes) are
 licensed under [Apache License 2.0](./LICENSE).
 
-[Latest version]: ./5.0.0/
+[Latest version]: ./4.10.2/
